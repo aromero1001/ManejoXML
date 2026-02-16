@@ -43,3 +43,27 @@ void UsingXmlReader(string xmlPath)
         }
     }
 }
+
+void UsingXmlWriter()
+{
+    XmlWriter xmlWriter = XmlWriter.Create("Contact.xml");
+
+    xmlWriter.WriteStartDocument();
+
+    xmlWriter.WriteStartElement("Contacts");
+
+    xmlWriter.WriteStartElement("Contact");
+
+    xmlWriter.WriteAttributeString("Phone", "022354");
+
+    xmlWriter.WriteString("John");
+
+    xmlWriter.WriteEndElement();
+
+    xmlWriter.WriteEndDocument();
+
+    xmlWriter.Close();
+}
+
+
+UsingXmlWriter();
